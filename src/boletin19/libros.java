@@ -11,7 +11,7 @@ import java.util.Objects;
  *
  * @author ped90
  */
-public class libros {
+public class libros implements Comparable<libros> {
     public String titulo;
     public String autor;
     public String ISBN;
@@ -114,6 +114,12 @@ public class libros {
         }
         return true;
     }
+     public int compareTo(libros o) {
+        String a=new String(String.valueOf(this.getTitulo()));
+        String b=new String(String.valueOf(o.getTitulo()));
+        return a.compareTo(a);
+    }
+   
 
     
 }

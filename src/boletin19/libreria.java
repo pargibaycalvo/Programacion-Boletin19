@@ -6,6 +6,8 @@
 package boletin19;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Iterator;
 import javax.swing.JOptionPane;
 import milibreria.Milibreria;
@@ -17,10 +19,12 @@ import milibreria.Milibreria;
 public class libreria {
     
     ArrayList<libros> lista = new ArrayList();
-
+    
     public void añadirlibros(libros b) {
-
+        Collections.sort(lista);
         lista.add(b);
+        
+       
     }
     public void mostrar(){
         Iterator <libros> ped=lista.iterator();
@@ -34,7 +38,7 @@ public class libreria {
              if(lista.get(i).getUnidades()>=lib.unidades){
                  lista.get(i).setUnidades((lista.get(i).unidades -lib.unidades ));
              }else
-                 System.out.println("No se puede realizar la opración deseada");
+                 System.out.println("No se puede realizar la operación deseada");
         }
         }
     }
@@ -56,6 +60,12 @@ public class libreria {
             System.out.println("Este libro no está disponible");
   
     }
+    public void ordenar(){
+        Collections.sort(lista,Collections.reverseOrder());
+    }
+           
+    
+    
     
       
 
